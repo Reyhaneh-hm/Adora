@@ -1,0 +1,1 @@
+import '../../../scss/components/pages/landing/landing.scss';
