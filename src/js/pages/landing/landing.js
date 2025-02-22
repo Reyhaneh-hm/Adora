@@ -177,5 +177,12 @@ document.getElementById('maxLabel').textContent = maxValue;
 document.getElementById('minLabel').style.left = `${(minIndex / labels.length) * 100}%`;
 document.getElementById('minLabel').textContent = minValue;
 
+/*----------------Dark & Light-----------------*/
 
+document.addEventListener("DOMContentLoaded", function () {
+    const switchInput = document.querySelector(".switch .input"); // انتخاب input
+    switchInput.addEventListener("change", function () {
+        document.documentElement.classList.toggle("dark");
+    });
+});
 

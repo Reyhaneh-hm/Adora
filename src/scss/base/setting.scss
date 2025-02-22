@@ -14,8 +14,7 @@ $text1: #ABB5C6;
 $text2: #3D3C45;
 
 $bg: #fff;
-$bg2: #f8fafd;
-
+$bg2: #F3F7FE;
 
 $desc1: #E3EBF6;
 $desc2: #E9EEF6;
@@ -25,5 +24,64 @@ $desc5: #F3F7FE;
 $desc6: #F8FAFD;
 $desc7: #FFFFFF;
 
-
 $transition: all 0.3s;
+
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --pink: #FF4B7C;
+    --blue: #0B57D0;
+    --green: #3DB178;
+    --red: #EB4235;
+    --orange: #FFBF00;
+
+    --hover1: #0B57D0;
+    --hover2: #FFBF00;
+
+    --text1: #ABB5C6;
+    --text2: #3D3C45;
+
+    --bg: #fff;
+    --bg2: #f8fafd;
+    --bg3: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 253, 1) 70%, rgba(243, 247, 254, 1) 75%, rgba(243, 247, 254, 1) 85%, rgba(234, 241, 251, 1) 95%, rgba(233, 238, 246, 1) 100%);
+
+    --desc1: #E3EBF6;
+    --desc2: #E9EEF6;
+    --desc3: #EAF1FB;
+    --desc4: #F3F7FE;
+    --desc5: #F8FAFD;
+    --desc6: #FFFFFF;
+
+    --bgBoxDiscount: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 253, 1) 35%, rgba(243, 247, 254, 1) 60%, rgba(243, 247, 254, 1) 75%, rgba(234, 241, 251, 1) 100%);
+    --bgBoxCreateProduct: linear-gradient(0deg, rgba(255, 255, 255, 0.011642156862745057) 0%, rgba(255, 253, 246, 0.5998774509803921) 37%, rgba(255, 244, 213, 1) 100%);
+
+    --bgBank: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(239, 245, 253, 1) 100%);
+    --bgPoshtibani: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 228, 1) 100%);
+    --bgChat: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(247, 248, 250, 1) 100%);
+    --bgDiscount: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 238, 243, 1) 100%);
+    --bgBoxes: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(233, 246, 240, 1) 100%);
+}
+
+:root.dark {
+    --black: #fff;
+    --white: #161616;
+    --pink: #b81c52;
+    --green: #217A4E;
+    --orange: #C79100;
+
+    --text2: #e0e0e0;
+
+    --bg: #161616;
+    --bg2: #404040;
+    --bg3: linear-gradient(0deg, rgba(175, 175, 175, 1) 0%, rgba(128, 128, 128, 1) 25%, rgba(96, 96, 96, 1) 50%, rgba(64, 64, 64, 1) 75%, rgba(32, 32, 32, 1) 100%);
+
+    --bgBoxDiscount: #161616;
+    --bgBoxCreateProduct: #161616;
+
+    --bgBank: linear-gradient(0deg, rgba(22, 22, 22, 0) 0%, rgba(26, 40, 61, 1) 100%);
+    --bgPoshtibani: linear-gradient(0deg, rgba(22, 22, 22, 0) 0%, rgba(64, 55, 27, 1) 100%);
+    --bgChat: linear-gradient(0deg, rgba(22, 22, 22, 0) 0%, rgba(42, 51, 66, 1) 100%);
+    --bgDiscount: linear-gradient(0deg, rgba(22, 22, 22, 0) 0%, rgba(63, 27, 37, 1) 100%);
+    --bgBoxes: linear-gradient(0deg, rgba(22, 22, 22, 0) 0%, rgba(21, 59, 40, 1) 100%);
+}
