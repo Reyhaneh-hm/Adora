@@ -12,6 +12,7 @@
     "vite": "^6.1.0"
   },
   "dependencies": {
+    "chart.js": "^4.4.8",
     "sass": "^1.84.0",
     "vite-plugin-inspect": "^10.2.1"
   }

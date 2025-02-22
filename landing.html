@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing page</title>
 </head>
@@ -14,7 +13,7 @@
         <div class="card d-flex align-items-center flex-column">
             <header class="header d-flex align-items-center justify-content-between">
                 <div class="menu d-flex align-items-center justify-content-center">
-                    <img src="./public/img/landing/Group.svg" class="logo" alt="logo">
+                    <img src="./img/landing/Group.svg" class="logo" alt="logo">
                     <ul class="items-box">
                         <li class="item"><a href="#" class="action">ورود / ثبت نام</a></li>
                         <li class="item"><a href="#" class="action">راهنمای آدورا</a></li>
@@ -33,10 +32,116 @@
                     <a href="#" class="action">شروع کنید</a>
                 </span>
             </div>
-
             <div class="info-subject">
-                <div class="box-imgPhone">
+                <div class="box-phone">
                     <img src="/img/landing/Phone.png" class="img" alt="Phone">
+                    <div class="box-content d-flex align-items-center justify-content-center flex-column">
+                        <div class="top d-flex align-items-center justify-content-between">
+                            <img src="/img/landing/arrow.svg" class="icon-arrow" alt="icon-arrow">
+                            <select name="سفارشی" id="custom" class="custom">
+                                <option selected disabled>سفارشی</option>
+                                <option value="نمایشگاه">دراماتیک</option>
+                                <option value="نمایشگاه">رمانتیک</option>
+                                <option value="نمایشگاه">کمدی</option>
+                                <option value="نمایشگاه">تخیلی</option>
+                            </select>
+                            <p class="date">۲۰ اردیبهشت - ۳ خرداد</p>
+                        </div>
+                        <div class="visit">
+                            <p class="number">5049</p>
+                            <span class="desc">بازدید کل</span>
+                        </div>
+                        <div class="status d-flex align-items-center justify-content-center">
+                            <div class="users">
+                                <span class="increase">۳,۰۰۰٪+</span>
+                                <p class="number">۲۲٪</p>
+                                <p class="desc">کاربران میهمان</p>
+                            </div>
+                            <canvas id="myChart"></canvas>
+                            <div class="client">
+                                <span class="increase">۲۰۳٪+</span>
+                                <p class="number">۷۸٪</p>
+                                <p class="desc">مشتریان</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="waveChart"></canvas>
+                            <div id="maxLabel" class="label-box max-label">۴۷</div>
+                            <div id="minLabel" class="label-box min-label">۱۵</div>
+                            <div class="month">
+                                <span class="name">فروردین</span>
+                                <span class="name">اردیبهشت</span>
+                                <span class="name">خرداد</span>
+                                <span class="name">تیر</span>
+                                <span class="name">مرداد</span>
+                                <span class="name">شهریور</span>
+                                <span class="name">مهر</span>
+                                <span class="name">آبان</span>
+                                <span class="name">آذر</span>
+                                <span class="name">دی</span>
+                                <span class="name">بهمن</span>
+                                <span class="name">اسفند</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partSlider">
+                        <div scroll_container
+                            class="slider d-flex flex-column align-items-center justify-content-center ">
+                            <div class="row-slider d-flex align-items-center justify-content-center ">
+                                <div class="item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="imageItem d-flex align-items-center justify-content-center flex-column"
+                                        id="bank">
+                                        <img src="/img/landing/Post Bank.svg" class="img" alt="icon-bank">
+                                    </div>
+                                    <div class="content">
+                                        <p class="number">۱۸۲۹</p>
+                                        <p class="money">928,302 <span class="toman">تومان</span></p>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="imageItem d-flex align-items-center justify-content-center flex-column"
+                                        id="poshtibani">
+                                        <img src="/img/landing/poshtibani.svg" class="img" alt="icon-bank">
+                                    </div>
+                                    <div class="content">
+                                        <p class="number">۱۸۲۹</p>
+                                        <p class="money">928,302 <span class="toman">تومان</span></p>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="imageItem d-flex align-items-center justify-content-center flex-column"
+                                        id="chat">
+                                        <img src="/img/landing/Chat.svg" class="img" alt="icon-bank">
+                                    </div>
+                                    <div class="content">
+                                        <p class="number">۱۸۲۹</p>
+                                        <p class="money">928,302 <span class="toman">تومان</span></p>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="imageItem d-flex align-items-center justify-content-center flex-column"
+                                        id="discount">
+                                        <img src="/img/landing/Iconly-Light-Outline-Discount.svg" class="img"
+                                            alt="icon-bank">
+                                    </div>
+                                    <div class="content">
+                                        <p class="number">۱۸۲۹</p>
+                                        <p class="money">928,302 <span class="toman">تومان</span></p>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="imageItem d-flex align-items-center justify-content-center flex-column"
+                                        id="boxes">
+                                        <img src="/img/landing/Delivery Boxes.svg" class="img" alt="icon-bank">
+                                    </div>
+                                    <div class="content">
+                                        <p class="number">۱۸۲۹</p>
+                                        <p class="money">928,302 <span class="toman">تومان</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="box-shoes d-flex flex-column align-items-center justify-content-center">
                     <div class="status d-flex align-items-center justify-content-center">
@@ -44,8 +149,9 @@
                             <p class="number"><span>بازدید</span>۱۲۰۳</p>
                             <p class="desc">مجموع تعداد بازدید</p>
                         </div>
-                        <div class="image-shoes">
-                            <img src="/public/img/landing/shoes.png" class="img" alt="shoes">
+                        <div class="image-shoes d-flex align-items-center justify-content-center">
+                            <canvas id="chart-shoes"></canvas>
+                            <img src="/img/landing/shoes.png" class="img" alt="shoes">
                         </div>
                         <div class="sum-buy">
                             <p class="number">۵۶۴ <span>خرید</span></p>
@@ -57,6 +163,76 @@
                         <p class="desc"><span>۷۴.۳٪</span>از افرادی که این محصول را دیده اند آن را خریده اند </p>
                     </div>
                 </div>
+                <div class="discount d-flex flex-column align-items-center justify-content-center">
+                    <img src="/img/landing/discount.svg" class="icon" alt="takhfif">
+                    <p class="text">ایجاد کدتخفیف</p>
+                </div>
+                <label class="switch">
+                    <span class="sun">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g fill="#fff">
+                                <circle r="5" cy="12" cx="12"></circle>
+                                <path
+                                    d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                                </path>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="moon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <g fill="#fff">
+                                <path
+                                    d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+                                </path>
+                            </g>
+                        </svg>
+                    </span>
+                    <input type="checkbox" class="input">
+                    <span class="slider"></span>
+                </label>
+                <div class="special-sale d-flex flex-column align-items-center justify-content-center">
+                    <div class="top d-flex align-items-center justify-content-between">
+                        <div class="type-sale d-flex align-items-center justify-content-center">
+                            <div class="box-imgLamp d-flex align-items-center justify-content-center">
+                                <img src="/img/landing/lamp.svg" class="icon" alt="lamp">
+                            </div>
+                            <div class="content">
+                                <p class="type">نوع:</p>
+                                <p class="text">فروش ویژه</p>
+                            </div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="dates d-flex align-items-center justify-content-center">
+                        <div class="start-date">
+                            <p class="text">تاریخ شروع کوپن</p>
+                            <p class="number">۱۴۰۳/۰۲/۲۹</p>
+                        </div>
+                        <div class="box-imageTime d-flex align-items-center justify-content-center">
+                            <img src="/img/landing/timer.svg" class="icon" alt="timer">
+                        </div>
+                        <div class="end-date">
+                            <p class="text">تاریخ انقضای کوپن</p>
+                            <p class="number">۱۴۰۳/۰۳/۲۲</p>
+                        </div>
+                    </div>
+                    <span class="dashed">- - - - - - - - - - - - - - - - -</span>
+                    <div class="bottom d-flex align-items-center justify-content-between">
+                        <div class="btn d-flex align-items-center justify-content-center">
+                            <a href="#" class="delete">حذف</a>
+                            <a href="#" class="edit">ویرایش</a>
+                        </div>
+                        <p class="text">فروش ویژه عید تا عید</p>
+                    </div>
+                </div>
+                <div class="create-product d-flex flex-column align-items-center justify-content-center">
+                    <img src="/img/landing/lamp-yelow.svg" class="icon" alt="takhfif">
+                    <p class="text">ایجاد فروش ویژه</p>
+                </div>
+
             </div>
         </div>
     </section>

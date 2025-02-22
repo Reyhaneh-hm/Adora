@@ -1,5 +1,45 @@
 @import '../../../base/setting.scss';
 
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes tilt {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes moveTop {
+    0% {
+        transform: translateY(1px);
+    }
+
+    100% {
+        transform: translateY(-1px);
+    }
+}
+
 .page-landing {
     overflow: hidden;
 
@@ -15,8 +55,7 @@
             width: 2600px;
             height: 1500px;
             border-radius: 50%;
-            background: rgb(255, 255, 255);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.7035189075630253) 0%, rgba(248, 250, 253, 0.7539390756302521) 5%, rgba(243, 247, 254, 0.8015581232492998) 10%, rgba(243, 247, 254, 0.8463760504201681) 50%, rgba(234, 241, 251, 1) 90%, rgba(233, 238, 246, 1) 95%, rgba(227, 235, 246, 1) 100%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 253, 1) 70%, rgba(243, 247, 254, 1) 75%, rgba(243, 247, 254, 1) 85%, rgba(234, 241, 251, 1) 95%, rgba(233, 238, 246, 1) 100%);
         }
 
         .header {
@@ -75,6 +114,11 @@
                     margin-right: 3px;
                     vertical-align: middle;
                     background: $blue;
+                    transition: $transition;
+
+                    &:hover {
+                        background: $text2;
+                    }
                 }
             }
         }
@@ -84,18 +128,285 @@
             bottom: 0;
             z-index: 1;
 
-            .box-imgPhone {
+            .box-phone {
                 width: 435px;
 
                 .img {
                     width: 100%;
                     height: 100%;
                 }
+
+                .box-content {
+                    position: absolute;
+                    top: 100px;
+                    right: 0;
+                    width: 100%;
+                    gap: 12px;
+
+                    .top {
+                        width: 100%;
+                        padding-inline: 60px;
+
+                        .icon-arrow {
+                            display: block;
+                            position: absolute;
+                            right: 73px;
+                            margin-top: 2px;
+                            width: 10px;
+                        }
+
+                        .custom {
+                            color: $text2;
+                            cursor: pointer;
+                            border: 1px solid $text2;
+                            border-radius: 12px;
+                            font-size: 12px;
+                            padding: 7px 30px 7px 10px;
+                            transition: all 0.3s;
+                        }
+
+                        .date {
+                            color: $text2;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .visit {
+                        text-align: center;
+
+                        .number {
+                            font-size: 20px;
+                            color: $text2;
+                        }
+
+                        .desc {
+                            font-size: 12px;
+                            color: #ABB5C6;
+                        }
+                    }
+
+                    .status {
+                        gap: 10px;
+                        position: relative;
+                        right: -13px;
+
+                        .users {
+                            text-align: left;
+                        }
+
+                        .users,
+                        .client {
+                            .increase {
+                                color: $green;
+                                font-size: 12px;
+                            }
+
+                            .number {
+                                font-size: 20px;
+                                color: $blue;
+                                margin-bottom: 5px;
+                            }
+
+                            .desc {
+                                font-size: 12px;
+                                color: $text2;
+                            }
+                        }
+
+                        #myChart {
+                            position: relative;
+                            top: 0;
+                            z-index: 10;
+                            width: 68px !important;
+                            height: 68px !important;
+                        }
+                    }
+
+                    .chart-container {
+                        width: 435px;
+                        height: 210px;
+                        margin: auto;
+                        position: relative;
+                        left: 0;
+                        top: 2px;
+
+                        #waveChart {
+                            display: block;
+                            box-sizing: border-box;
+                            height: 118px !important;
+                            width: 500px !important;
+                            position: relative;
+                            left: 72px !important;
+                        }
+
+                        .label-box {
+                            position: absolute;
+                            background-color: white;
+                            padding: 5px 10px;
+                            border-radius: 15px;
+                            font-size: 14px;
+                            font-weight: bold;
+                            border: 1px solid #ddd;
+                        }
+
+                        .max-label {
+                            top: -13px;
+                            left: 50%;
+                            transform: translateX(-170%);
+                            border-color: $green;
+                            color: $green;
+                            background: #3db17824;
+
+                            &::after {
+                                content: "- - - - - - - - - -";
+                                display: block;
+                                color: $green;
+                                position: absolute;
+                                position: absolute;
+                                right: -77px;
+                                bottom: 5px;
+                                width: 76px;
+                            }
+                        }
+
+                        .min-label {
+                            top: 92px;
+                            left: 20%;
+                            transform: translateX(360%);
+                            border-color: $orange;
+                            color: $orange;
+                            background: #ffbf0021;
+
+                            &::after {
+                                content: "- - - - - - - - - -";
+                                display: block;
+                                color: $orange;
+                                position: absolute;
+                                position: absolute;
+                                left: -77px;
+                                bottom: 5px;
+                                width: 76px;
+                            }
+                        }
+
+                        .month {
+                            width: 91%;
+                            position: relative;
+                            right: 22px;
+                            top: 12px;
+                            display: flex;
+                            flex-direction: row-reverse;
+
+
+                            .name {
+                                color: $text1;
+                                font-size: 10px;
+                                transform: rotate(-40deg);
+                                margin-inline: 6px;
+                            }
+                        }
+                    }
+                }
+
+                .partSlider {
+                    width: 133%;
+                    position: absolute;
+                    bottom: 0;
+                    right: -70px;
+                    animation: moveTop 1s 0.5s ease-in-out infinite alternate;
+
+                    .slider {
+                        padding-block: 10px;
+                        padding-left: 6px;
+                        padding-right: 147px;
+                        overflow-x: auto;
+                        transition: all 0.3s;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        .row-slider {
+                            scroll-snap-align: start;
+                            flex-shrink: 0;
+                            gap: 15px;
+
+                            .item {
+                                background-color: $white;
+                                width: 130px;
+                                min-height: 165px;
+                                padding: 10px;
+                                border-radius: 20px;
+                                gap: 5px;
+                                box-shadow: 0 3px 20px -19px #000;
+
+                                .imageItem {
+                                    width: 80px;
+                                    height: 80px;
+                                    border-radius: 50px;
+                                    gap: 5px;
+
+                                    .img {
+                                        width: 40%;
+                                        height: 40%;
+                                    }
+
+                                    &::after {
+                                        content: "انبار";
+                                        display: block;
+                                        color: $text2;
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                #bank {
+                                    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(239, 245, 253, 1) 100%);
+                                }
+
+                                #poshtibani {
+                                    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 228, 1) 100%);
+                                }
+
+                                #chat {
+                                    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(247, 248, 250, 1) 100%);
+                                }
+
+                                #discount {
+                                    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 238, 243, 1) 100%);
+                                }
+
+                                #boxes {
+                                    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(233, 246, 240, 1) 100%);
+                                }
+
+                                .content {
+                                    .number {
+                                        color: #ABB5C6;
+                                        text-align: center;
+                                        font-size: 17px;
+                                    }
+
+                                    .money {
+                                        font-size: 15px;
+                                        color: #0b57d0;
+                                        margin-top: 10px;
+
+                                        .toman {
+                                            color: #ABB5C6;
+                                            font-size: 12px;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             .box-shoes {
                 width: 400px;
-                height: 200px;
+                min-height: 200px;
                 background: $white;
                 box-shadow: 0 3px 20px -19px $black;
                 border-radius: 30px;
@@ -104,9 +415,10 @@
                 left: 390px;
                 gap: 15px;
                 padding: 12px;
+                animation: moveTop 1s 1s ease-in-out infinite alternate;
 
                 .status {
-                    gap: 15px;
+                    gap: 10px;
 
                     .sum-visit {
                         text-align: left;
@@ -135,20 +447,22 @@
                     }
 
                     .image-shoes {
-                        width: 65px;
-                        height: 65px;
-                        border-top: 6px solid #E9EEF6;
-                        border-bottom: 6px solid $blue;
-                        border-right: 6px solid $blue;
-                        border-left: 6px solid $blue;
-                        border-radius: 50px;
-                        padding: 3px;
-                        transform: rotate(45deg);
+                        width: 70px;
+                        height: 70px;
+                        position: relative;
+
+                        #chart-shoes {
+                            position: absolute;
+                            bottom: -1px;
+                            left: -7px;
+                            z-index: 10;
+                            width: 85px !important;
+                            height: 85px !important;
+                        }
 
                         .img {
-                            width: 100%;
-                            height: 100%;
-                            transform: rotate(-45deg);
+                            width: 67%;
+                            height: 67%;
                         }
 
                         &::after {
@@ -157,12 +471,12 @@
                             background-image: url(/img/landing/King.svg);
                             background-repeat: no-repeat;
                             background-size: 100%;
-                            width: 18px;
+                            width: 22px;
                             height: 40%;
                             position: absolute;
-                            top: -18px;
-                            right: 25px;
-                            transform: rotate(-40deg);
+                            top: -10px;
+                            right: 0;
+                            transform: rotate(5deg);
                         }
                     }
                 }
@@ -179,6 +493,321 @@
                             margin-left: 8px;
                         }
                     }
+                }
+            }
+
+            .discount {
+                width: 150px;
+                height: 150px;
+                border: 1px solid #eaf1fb;
+                border-radius: 20px;
+                gap: 17px;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 253, 1) 35%, rgba(243, 247, 254, 1) 60%, rgba(243, 247, 254, 1) 75%, rgba(234, 241, 251, 1) 100%);
+                position: absolute;
+                top: 430px;
+                right: -300px;
+                box-shadow: 0 3px 20px -19px $black;
+                animation: moveTop 1s ease-in-out infinite alternate;
+
+                .icon {
+                    width: 42px;
+                }
+
+                .text {
+                    font-size: 15px;
+                    color: #3d3c45;
+                }
+            }
+
+            .switch {
+                font-size: 17px;
+                position: absolute;
+                top: 405px;
+                right: -145px;
+                display: inline-block;
+                width: 65px;
+                height: 35px;
+                animation: moveTop 1s 0.5s ease-in-out infinite alternate;
+
+                .sun,
+                .moon {
+                    svg {
+                        position: absolute;
+                        top: 6px;
+                        z-index: 1;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                .sun svg {
+                    left: 35px;
+                    animation: rotate 15s linear infinite;
+                }
+
+                .moon svg {
+                    left: 5px;
+                    animation: tilt 5s linear infinite;
+                }
+
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+
+                    &:checked+.slider {
+                        background-color: $blue;
+                    }
+
+                    &:focus+.slider {
+                        box-shadow: 0 3px 20px -19px $black;
+                    }
+
+                    &:checked+.slider::before {
+                        transform: translateX(30px);
+                    }
+                }
+
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: $orange;
+                    transition: all 0.4s;
+                    border-radius: 30px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        height: 28px;
+                        width: 28px;
+                        border-radius: 20px;
+                        left: 3px;
+                        bottom: 3px;
+                        z-index: 2;
+                        background-color: $white;
+                        transition: all 0.4s;
+                    }
+                }
+            }
+
+            .special-sale {
+                width: 400px;
+                min-height: 200px;
+                background: $white;
+                box-shadow: 0 3px 20px -19px $black;
+                border-radius: 30px;
+                position: absolute;
+                top: 100px;
+                right: 458px;
+                gap: 15px;
+                padding: 21px 17px;
+                animation: moveTop 1s ease-in-out infinite alternate;
+
+                .top {
+                    position: relative;
+                    width: 100%;
+
+                    .type-sale {
+                        gap: 10px;
+
+                        .box-imgLamp {
+                            width: 50px;
+                            height: 50px;
+                            background: $orange;
+                            border-radius: 50%;
+
+                            .icon {
+                                width: 60%;
+                                height: 60%;
+                            }
+                        }
+
+                        .content {
+                            .type {
+                                color: $text1;
+                                margin-bottom: 5px;
+                                font-size: 14px;
+                            }
+
+                            .text {
+                                font-size: 15px;
+                                color: $text2;
+                            }
+                        }
+                    }
+
+                    .switch {
+                        font-size: 17px;
+                        position: relative;
+                        display: inline-block;
+                        width: 60px;
+                        height: 34px;
+                        top: 0;
+                        right: 0;
+                        transform: rotate(180deg);
+
+                        input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+
+
+                            &:checked+.slider {
+                                background: $blue;
+                            }
+
+                            &:focus+.slider {
+                                box-shadow: 0 3px 20px -19px $black;
+                            }
+
+                            &:checked+.slider:before {
+                                transform: translateX(28px);
+                                background-color: #F3F7FE;
+                            }
+                        }
+
+                        .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: #F3F7FE;
+                            transition: all 0.4s;
+                            border-radius: 30px;
+
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                height: 26px;
+                                width: 25px;
+                                border-radius: 50%;
+                                left: 3px;
+                                bottom: 4px;
+                                background: $blue;
+                                transition: all 0.4s;
+                            }
+                        }
+                    }
+                }
+
+                .dates {
+                    width: 100%;
+                    gap: 15px;
+
+                    .start-date,
+                    .end-date {
+
+                        .text {
+                            color: $text1;
+                            font-size: 13px;
+                            margin-bottom: 10px;
+                        }
+
+                        .number {
+                            font-size: 18px;
+                            color: $blue;
+                        }
+                    }
+
+                    .start-date {
+                        text-align: left;
+                    }
+
+                    .box-imageTime {
+                        width: 65px;
+                        height: 65px;
+                        background: #F3F7FE;
+                        border-radius: 50%;
+
+                        .icon {
+                            width: 50%;
+                            height: 50%;
+                        }
+                    }
+
+                }
+
+                .dashed {
+                    color: #F3F7FE;
+                    position: absolute;
+                    bottom: 38px;
+                    right: 0;
+                    width: 100%;
+                    display: block;
+                    font-size: 40px;
+                    padding-right: 11px;
+
+                    &::after,
+                    &::before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        bottom: 15px;
+                        display: block;
+                        background: #F3F7FE;
+                        border-radius: 50px;
+                    }
+
+                    &::after {
+                        right: -10px;
+                    }
+
+                    &::before {
+                        left: -10px;
+                    }
+                }
+
+                .bottom {
+                    width: 100%;
+                    margin-top: 30px;
+
+                    .btn {
+                        font-size: 13px;
+                        gap: 10px;
+
+                        .delete {
+                            color: $red;
+                        }
+
+                        .edit {
+                            color: $blue;
+                        }
+                    }
+
+                    .text {
+                        font-size: 14px;
+                        color: $text2;
+                    }
+                }
+            }
+
+            .create-product {
+                width: 150px;
+                height: 150px;
+                border: 1px solid #ffda641c;
+                border-radius: 20px;
+                gap: 17px;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.011642156862745057) 0%, rgba(255, 253, 246, 0.5998774509803921) 37%, rgba(255, 244, 213, 1) 100%);
+                position: absolute;
+                top: 380px;
+                right: 550px;
+                box-shadow: 0 3px 20px -19px $black;
+                animation: moveTop 1s 1s ease-in-out infinite alternate;
+
+                .icon {
+                    width: 50px;
+                }
+
+                .text {
+                    font-size: 15px;
+                    color: #3d3c45;
                 }
             }
         }
