@@ -63,14 +63,42 @@
             height: 70px;
 
             .menu {
+                @media screen and (max-width: 425px) {
+                    width: 70%;
+                    gap: 12px;
+                }
+
+                @media screen and (max-width: 375px) {
+                    width: 60%;
+                }
+
                 gap: 25px;
+                width: 80%;
+
+                &::-webkit-scrollbar-track {
+                    padding: 2px 0;
+                    background-color: $blue;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 1px;
+                    height: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: $blue;
+                }
 
                 .logo {}
 
                 .items-box {
-                    display: flex;
-                    align-items: center;
                     gap: 25px;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    width: 100%;
+                    padding-bottom: 11px;
+                    margin-bottom: -11px;
 
                     .item {
                         .action {
@@ -93,54 +121,186 @@
         }
 
         .contents {
+            @media screen and (max-width: 425px) {
+                margin-top: 25px;
+            }
+
             position: relative;
             z-index: 1;
 
             .title {
+                @media screen and (max-width: 425px) {
+                    font-size: 21px;
+                }
+
                 color: var(--text2);
                 font-size: 27px;
                 margin-bottom: 20px;
             }
 
             .text {
+                @media screen and (max-width: 425px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    font-size: 19px;
+                }
+
                 color: var(--blue);
                 font-size: 23px;
+                gap: 5px;
 
-                .action {
-                    padding: 10px 24px;
-                    font-size: 14px;
-                    color: var(--white);
-                    border-radius: 50px;
-                    margin-right: 3px;
-                    vertical-align: middle;
-                    background: var(--blue);
-                    transition: $transition;
+                .btns {
+                    @media screen and (max-width: 425px) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                    }
 
-                    &:hover {
-                        background: var(--text2);
+                    .switch2 {
+                        @media screen and (max-width: 425px) {
+                            display: block !important;
+                        }
+
+                        display: none !important;
+                        font-size: 17px;
+                        position: relative;
+                        display: inline-block;
+                        width: 105px;
+                        height: 40px;
+
+                        .sun,
+                        .moon {
+                            svg {
+                                position: absolute;
+                                top: 8px;
+                                z-index: 1;
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+
+                        .sun svg {
+                            left: 70px;
+                            animation: rotate 15s linear infinite;
+                        }
+
+                        .moon svg {
+                            left: 8px;
+                            animation: tilt 5s linear infinite;
+                        }
+
+                        input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+
+                            &:checked+.slider {
+                                background-color: var(--blue);
+                            }
+
+                            &:focus+.slider {
+                                box-shadow: 0 3px 20px -19px var(--black);
+                            }
+
+                            &:checked+.slider::before {
+                                transform: translateX(62px);
+                            }
+                        }
+
+                        .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: var(--orange);
+                            transition: all 0.4s;
+                            border-radius: 30px;
+
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                height: 28px;
+                                width: 28px;
+                                border-radius: 20px;
+                                left: 7px;
+                                bottom: 6px;
+                                z-index: 2;
+                                background-color: var(--white);
+                                transition: all 0.4s;
+                            }
+                        }
+                    }
+
+                    .action {
+                        @media screen and (max-width: 425px) {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        width: 105px;
+                        height: 40px;
+                        font-size: 14px;
+                        color: $white;
+                        border-radius: 50px;
+                        margin-right: 3px;
+                        vertical-align: middle;
+                        background: var(--blue);
+                        transition: $transition;
+
+                        &:hover {
+                            background: var(--text2);
+                            color: var(--white);
+                        }
                     }
                 }
             }
         }
 
         .info-subject {
+            @media screen and (max-width: 1440px) {
+                bottom: -17px;
+            }
+
+            @media screen and (max-width: 425px) {
+                bottom: -100px;
+            }
+
+            @media screen and (max-width: 375px) {
+                bottom: -25px;
+            }
+
+            @media screen and (max-width: 320px) {
+                bottom: 45px;
+            }
+
             position: absolute;
             bottom: 0;
             z-index: 1;
 
             .box-phone {
-                width: 435px;
+                width: 100%;
+                max-width: 435px;
+                min-width: 320px;
 
-                .img {
+                >.img {
                     width: 100%;
                     height: 100%;
-
-                    &.dark {
-                        filter: invert(1);
-                    }
+                    filter: var(--filterLightDark);
                 }
 
                 .box-content {
+                    @media screen and (max-width: 425px) {
+                        gap: 25px;
+                        right: 18px;
+                        width: 91%;
+                    }
+
                     position: absolute;
                     top: 100px;
                     right: 0;
@@ -148,10 +308,18 @@
                     gap: 12px;
 
                     .top {
+                        @media screen and (max-width: 425px) {
+                            padding-inline: 15px;
+                        }
+
                         width: 100%;
                         padding-inline: 60px;
 
                         .icon-arrow {
+                            @media screen and (max-width: 425px) {
+                                right: 29px;
+                            }
+
                             display: block;
                             position: absolute;
                             right: 73px;
@@ -162,7 +330,7 @@
                         .custom {
                             color: $text2;
                             cursor: pointer;
-                            border: 1px solid $text2;
+                            border: 1px solid var(--text2);
                             border-radius: 12px;
                             font-size: 12px;
                             padding: 7px 30px 7px 10px;
@@ -170,7 +338,7 @@
                         }
 
                         .date {
-                            color: $text2;
+                            color: var(--text2);
                             font-size: 12px;
                         }
                     }
@@ -180,7 +348,7 @@
 
                         .number {
                             font-size: 20px;
-                            color: $text2;
+                            color: var(--text2);
                         }
 
                         .desc {
@@ -213,7 +381,7 @@
 
                             .desc {
                                 font-size: 12px;
-                                color: $text2;
+                                color: var(--text2);
                             }
                         }
 
@@ -227,14 +395,32 @@
                     }
 
                     .chart-container {
-                        width: 435px;
+                        // width: 435px;
                         height: 210px;
+                        width: 100%;
+                        max-width: 435px;
+                        min-width: 310px;
                         margin: auto;
                         position: relative;
                         left: 0;
                         top: 2px;
 
                         #waveChart {
+                            @media screen and (max-width: 425px) {
+                                width: 481px !important;
+                                left: 88px !important;
+                            }
+
+                            @media screen and (max-width: 375px) {
+                                width: 426px !important;
+                                left: 80px !important;
+                            }
+
+                            @media screen and (max-width: 320px) {
+                                width: 373px !important;
+                                left: 72px !important;
+                            }
+
                             display: block;
                             box-sizing: border-box;
                             height: 118px !important;
@@ -254,6 +440,10 @@
                         }
 
                         .max-label {
+                            @media screen and (max-width: 375px) {
+                                transform: translateX(-195%);
+                            }
+
                             top: -13px;
                             left: 50%;
                             transform: translateX(-170%);
@@ -274,7 +464,11 @@
                         }
 
                         .min-label {
-                            top: 92px;
+                            @media screen and (max-width: 375px) {
+                                transform: translateX(342%);
+                            }
+
+                            top: 94px;
                             left: 20%;
                             transform: translateX(360%);
                             border-color: var(--orange);
@@ -294,6 +488,18 @@
                         }
 
                         .month {
+                            @media screen and (max-width: 425px) {
+                                right: 46px;
+                            }
+
+                            @media screen and (max-width: 375px) {
+                                right: 38px;
+                            }
+
+                            @media screen and (max-width: 320px) {
+                                right: 12px;
+                            }
+
                             width: 91%;
                             position: relative;
                             right: 22px;
@@ -303,6 +509,14 @@
 
 
                             .name {
+                                @media screen and (max-width: 375px) {
+                                    margin-inline: 4px;
+                                }
+
+                                @media screen and (max-width: 320px) {
+                                    margin-inline: 2px;
+                                }
+
                                 color: var(--text1);
                                 font-size: 10px;
                                 transform: rotate(-40deg);
@@ -313,6 +527,10 @@
                 }
 
                 .partSlider {
+                    @media screen and (max-width: 425px) {
+                        display: none !important;
+                    }
+
                     width: 133%;
                     position: absolute;
                     bottom: 0;
@@ -407,6 +625,10 @@
             }
 
             .box-shoes {
+                @media screen and (max-width: 425px) {
+                    display: none !important;
+                }
+
                 width: 400px;
                 min-height: 200px;
                 background: var(--white);
@@ -456,15 +678,15 @@
                         #chart-shoes {
                             position: absolute;
                             bottom: -1px;
-                            left: -7px;
+                            left: -8px;
                             z-index: 10;
                             width: 85px !important;
                             height: 85px !important;
                         }
 
                         .img {
-                            width: 67%;
-                            height: 67%;
+                            width: 72%;
+                            height: 72%;
                         }
 
                         &::after {
@@ -499,6 +721,10 @@
             }
 
             .discount {
+                @media screen and (max-width: 425px) {
+                    display: none !important;
+                }
+
                 width: 150px;
                 height: 150px;
                 border: 1px solid #eaf1fb33;
@@ -529,7 +755,7 @@
                 display: inline-block;
                 width: 65px;
                 height: 35px;
-                animation: moveTop 2.5s 0.5s ease-in-out infinite alternate;
+                animation: moveTop 3s 0.5s ease-in-out infinite alternate;
 
                 .sun,
                 .moon {
@@ -597,6 +823,10 @@
             }
 
             .special-sale {
+                @media screen and (max-width: 425px) {
+                    display: none !important;
+                }
+
                 width: 400px;
                 min-height: 200px;
                 background: var(--white);
@@ -607,7 +837,7 @@
                 right: 458px;
                 gap: 15px;
                 padding: 21px 17px;
-                animation: moveTop 3.5s ease-in-out infinite alternate;
+                animation: moveTop 3s ease-in-out infinite alternate;
 
                 .top {
                     position: relative;
@@ -736,7 +966,7 @@
                 }
 
                 .dashed {
-                    color: var(--desc4);
+                    color: var(--bgCercleAfter);
                     position: absolute;
                     bottom: 38px;
                     right: 0;
@@ -753,16 +983,19 @@
                         position: absolute;
                         bottom: 15px;
                         display: block;
-                        background: var(--desc4);
                         border-radius: 50px;
                     }
 
                     &::after {
                         right: -10px;
+                        background: var(--bgCercleAfter);
+                        box-shadow: inset 3px 0px 14px -16px var(--black);
                     }
 
                     &::before {
                         left: -10px;
+                        background: var(--bgCercleBefor);
+                        box-shadow: inset -3px 0px 14px -15px var(--black);
                     }
                 }
 
@@ -791,6 +1024,10 @@
             }
 
             .create-product {
+                @media screen and (max-width: 425px) {
+                    display: none !important;
+                }
+
                 width: 150px;
                 height: 150px;
                 border: 1px solid #ffda641c;
@@ -801,7 +1038,7 @@
                 top: 380px;
                 right: 550px;
                 box-shadow: 0 3px 20px -19px var(--black);
-                animation: moveTop 2s 1s ease-in-out infinite alternate;
+                animation: moveTop 3s 1s ease-in-out infinite alternate;
 
                 .icon {
                     width: 50px;
