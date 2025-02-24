@@ -32,11 +32,11 @@
 
 @keyframes moveTop {
     0% {
-        transform: translateY(1px);
+        transform: translateY(3px);
     }
 
     100% {
-        transform: translateY(-1px);
+        transform: translateY(-3px);
     }
 }
 
@@ -134,6 +134,10 @@
                 .img {
                     width: 100%;
                     height: 100%;
+
+                    &.dark {
+                        filter: invert(1);
+                    }
                 }
 
                 .box-content {
@@ -313,7 +317,7 @@
                     position: absolute;
                     bottom: 0;
                     right: -70px;
-                    animation: moveTop 1s 0.5s ease-in-out infinite alternate;
+                    animation: moveTop 3s 0.5s ease-in-out infinite alternate;
 
                     .slider {
                         padding-block: 10px;
@@ -413,7 +417,7 @@
                 left: 390px;
                 gap: 15px;
                 padding: 12px;
-                animation: moveTop 1s 1s ease-in-out infinite alternate;
+                animation: moveTop 3s 1s ease-in-out infinite alternate;
 
                 .status {
                     gap: 10px;
@@ -505,7 +509,7 @@
                 top: 430px;
                 right: -300px;
                 box-shadow: 0 3px 20px -19px var(--black);
-                animation: moveTop 1s ease-in-out infinite alternate;
+                animation: moveTop 3s ease-in-out infinite alternate;
 
                 .icon {
                     width: 42px;
@@ -525,7 +529,7 @@
                 display: inline-block;
                 width: 65px;
                 height: 35px;
-                animation: moveTop 1s 0.5s ease-in-out infinite alternate;
+                animation: moveTop 2.5s 0.5s ease-in-out infinite alternate;
 
                 .sun,
                 .moon {
@@ -603,7 +607,7 @@
                 right: 458px;
                 gap: 15px;
                 padding: 21px 17px;
-                animation: moveTop 1s ease-in-out infinite alternate;
+                animation: moveTop 3.5s ease-in-out infinite alternate;
 
                 .top {
                     position: relative;
@@ -797,7 +801,7 @@
                 top: 380px;
                 right: 550px;
                 box-shadow: 0 3px 20px -19px var(--black);
-                animation: moveTop 1s 1s ease-in-out infinite alternate;
+                animation: moveTop 2s 1s ease-in-out infinite alternate;
 
                 .icon {
                     width: 50px;

@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Help page</title>
 </head>
 
 <body>
 
+  <div class="overlay"></div>
   <section class="page-help d-flex align-items-center justify-content-center">
     <div class="card d-flex align-items-center flex-column">
       <header class="header d-flex align-items-center justify-content-between">
@@ -17,15 +17,16 @@
           <div class="image-user">
             <img src="/img/help/Ellipse 1.png" class="img" alt="user">
           </div>
-          <div class="box-icon">
-            <img src="/img/help/Category.svg" class="icon-access" alt="">
+          <div class="box-iconAccess">
+            <img src="/img/help/Category.svg" class="icon-access" alt="app">
           </div>
           <div class="search-box d-flex align-items-center justify-content-center">
             <img src="/img/help/Path 4.svg" class="icon-search" alt="">
             <input type="search" class="input-search" placeholder="جستجو کنید...">
+            <input type="search" class="input-search2" placeholder="محصول مورد نظر را جستوجو کنید...">
           </div>
         </div>
-        <div class="content">
+        <div class="content d-flex flex-column">
           <span class="name">Adora</span>
           <p class="text">Help Center</p>
         </div>
@@ -34,28 +35,28 @@
 
         <ul class="list">
           <li class="item">
-            <a href="section1" class="link">ایجاد محصول جدید</a>
-            <ul class="sub-list">
+            <a href="#content1" class="link list-item active">ایجاد محصول جدید</a>
+            <ul class="subList">
               <li class="itemList item">
-                <a href="#section2" class="link-subList">عنوان محصول</a>
+                <a href="#content2" class="link-subList subList-item">عنوان محصول</a>
               </li>
               <li class="itemList item">
-                <a href="#section3" class="link-subList">توضحیات محصول</a>
+                <a href="#content3" class="link-subList subList-item">توضحیات محصول</a>
               </li>
               <li class="itemList item">
-                <a href="#section4" class="link-subList">تصویر محصول</a>
+                <a href="#content4" class="link-subList subList-item">تصویر محصول</a>
               </li>
             </ul>
           </li>
-          <li class="item"><a href="#section5" class="link">ایجاد دسته بندی محصول</a></li>
-          <li class="item"><a href="#section6" class="link">ایجاد ویژگی محصول</a></li>
-          <li class="item"><a href="#section7" class="link">کد های تخفیف</a></li>
-          <li class="item"><a href="#section8" class="link">فروش ویژه</a></li>
-          <li class="item"><a href="#section9" class="link">آمار و ارقام</a></li>
-          <li class="item"><a href="#section10" class="link">سیستم نوتیفیکیشن های آدورا</a></li>
+          <li class="item"><a href="#section5" class="link list-item">ایجاد دسته بندی محصول</a></li>
+          <li class="item"><a href="#section6" class="link list-item">ایجاد ویژگی محصول</a></li>
+          <li class="item"><a href="#section7" class="link list-item">کد های تخفیف</a></li>
+          <li class="item"><a href="#section8" class="link list-item">فروش ویژه</a></li>
+          <li class="item"><a href="#section9" class="link list-item">آمار و ارقام</a></li>
+          <li class="item"><a href="#section10" class="link list-item">سیستم نوتیفیکیشن های آدورا</a></li>
         </ul>
 
-        <div class="part newProduct" id="section1">
+        <div class="part part1 newProduct" id="content1">
           <h2 class="title">ایجاد محصول جدید</h2>
           <div class="desc">
             <p class="text"> یک توضیح مخترو مفید در رابطه با ایجاد مجصول جدید مصلا </p>
@@ -66,7 +67,7 @@
             <img src="/img/help/img1.png" class="img" alt="imgNewProduct">
           </div>
         </div>
-        <div class="part newProduct" id="section2">
+        <div class="part newProduct" id="content2">
           <h2 class="title">عنولن محصول </h2>
           <div class="desc">
             <p class="text">یک توضیح مخترو مفید در رابطه با ایجاد مجصول جدید مصلا ایجاد محصول جدید در اپلیکیشن مدیریت
@@ -78,7 +79,7 @@
         </div>
       </div>
 
-      <div class="question-box d-flex align-items-center justify-content-between">
+      <div class="question-box d-flex align-items-center justify-content-between flex-column-md">
         <span class="question-text">این پاسخ نیاز شما را برطرف کرد؟</span>
         <div class="answer">
           <button class="btn-yes">بله</button>
@@ -90,155 +91,12 @@
           <p class="text">به راهنمایی بیشتری نیاز دارید؟</p>
           <a class="btn  d-flex align-items-center justify-content-center"> درخواست تماس </a>
         </div>
-        <img src="/img/help/homepage.svg" class="image-footer" alt="image-footer">
+        <div class="box-imgFooter">
+          <img src="/img/help/homepage.svg" class="image" alt="image-footer">
+        </div>
       </footer>
     </div>
   </section>
-
-
-
-
-
-
-
-
-  <!-- <ul class="listss">
-    <li class="itemss"><a href="#section1">بخش اول</a></li>
-    <li class="itemss"><a href="#section2">بخش دوم</a></li>
-    <li class="itemss"><a href="#section3">بخش سوم</a></li>
-    <li class="itemss"><a href="#section4">بخش چهارم</a></li>
-  </ul>
-
-  <div class="container">
-    <section id="section1">بخش اول</section>
-    <section id="section2">بخش دوم</section>
-    <section id="section3">بخش سوم</section>
-    <section id="section4">بخش چهارم</section>
-  </div> -->
-
-  <!-- <ul class="listss">
-    <li class="itemss">
-      <a href="#section1">بخش اول</a>
-      <ul class="sub-list">
-        <li class="itemss">
-          <a href="#section1-1">زیر بخش ۱-۱</a>
-        </li>
-        <li class="itemss">
-          <a href="#section1-2">زیر بخش ۱-۲</a>
-        </li>
-      </ul>
-    </li>
-    <li class="itemss">
-      <a href="#section2">بخش دوم</a>
-      <ul class="sub-list">
-        <li class="itemss">
-          <a href="#section2-1">زیر بخش ۲-۱</a>
-        </li>
-        <li class="itemss">
-          <a href="#section2-2">زیر بخش ۲-۲</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <div class="container">
-    <section id="section1">بخش اول</section>
-    <section id="section1-1">زیر بخش ۱-۱</section>
-    <section id="section1-2">زیر بخش ۱-۲</section>
-    <section id="section2">بخش دوم</section>
-    <section id="section2-1">زیر بخش ۲-۱</section>
-    <section id="section2-2">زیر بخش ۲-۲</section>
-  </div> -->
-
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const listItems = document.querySelectorAll(".item"); // کلاس درست شد
-      const sections = document.querySelectorAll("section");
-
-      function updateActiveItem() {
-        let currentSection = null;
-
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom > 150) {
-            currentSection = section;
-          }
-        });
-
-        if (!currentSection) return;
-
-        const currentId = currentSection.id;
-
-        listItems.forEach((item) => {
-          const link = item.querySelector("a");
-          if (link && link.getAttribute("href") === `#${currentId}`) {
-            item.classList.add("active");
-          } else {
-            item.classList.remove("active");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", updateActiveItem);
-      updateActiveItem();
-    });
-
-
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const listItems = document.querySelectorAll(".listss .itemss");
-    //   const sections = document.querySelectorAll("section");
-
-    //   // به محض بارگذاری صفحه، باید آیتم اول فعال بشه
-    //   listItems[0].classList.add("active");  // اینجا کلاس active رو به آیتم اول می‌زنیم.
-
-    //   // عملکرد برای آپدیت کردن آیتم‌های فعال در هنگام اسکرول
-    //   function updateActiveItem() {
-    //     let currentSection = null;
-
-    //     // پیدا کردن سکشن فعلی که در محدوده نمایش هست
-    //     sections.forEach((section) => {
-    //       const rect = section.getBoundingClientRect();
-    //       if (rect.top <= 150 && rect.bottom > 150) {
-    //         currentSection = section;
-    //       }
-    //     });
-
-    //     if (!currentSection) return;
-
-    //     const currentId = currentSection.id;
-
-    //     listItems.forEach((item) => {
-    //       const link = item.querySelector("> a");
-    //       if (link && link.getAttribute("href") === `#${currentId}`) {
-    //         item.classList.add("active");
-    //       } else {
-    //         item.classList.remove("active");
-    //       }
-
-    //       // بررسی زیرآیتم‌ها برای فعال شدن
-    //       const subLinks = item.querySelectorAll(".itemss a");
-    //       subLinks.forEach((subLink) => {
-    //         if (subLink.getAttribute("href") === `#${currentId}`) {
-    //           subLink.parentElement.classList.add("active");
-    //           item.classList.add("active"); // والد هم `active` بشه
-    //         } else {
-    //           subLink.parentElement.classList.remove("active");
-    //         }
-    //       });
-    //     });
-    //   }
-
-    //   // فعال کردن به محض بارگذاری صفحه
-    //   window.addEventListener("scroll", updateActiveItem);
-    //   updateActiveItem(); // فراخوانی به محض بارگذاری صفحه
-    // });
-
-  </script>
-
-
-
-
 
   <script type="module" src="/main.js"></script>
   <script type="module" src="/src/js/pages/help/help.js"></script>

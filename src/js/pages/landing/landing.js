@@ -180,7 +180,7 @@ document.getElementById('minLabel').textContent = minValue;
 /*----------------Dark & Light-----------------*/
 
 document.addEventListener("DOMContentLoaded", function () {
-    const switchInput = document.querySelector(".switch .input"); // انتخاب input
+    const switchInput = document.querySelector(".switch .input");
     switchInput.addEventListener("change", function () {
         document.documentElement.classList.toggle("dark");
     });
